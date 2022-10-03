@@ -1,10 +1,13 @@
 import React from 'react';
 import '../styles/ButtonClear.css';
 
-const ButtonClear = () => {
+const ButtonClear = (props) => {
   return (
-    <button className='button-clear' >
-      Clear
+    <button 
+      className='button-clear'
+      onClick={props.useClear}
+    >
+      {props.children}
     </button>
   )
 }

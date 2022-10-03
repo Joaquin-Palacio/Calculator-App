@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Button.css';
 
-const Button = ({children}) => {
+const Button = (props) => {
   
   const isOperator = (value) => {
     return isNaN(value) && (value !== '.' && (value !== '=')); 
@@ -9,9 +9,10 @@ const Button = ({children}) => {
 
   return (
     <div 
-      className={`button-container ${isOperator(children) ? 'operator' : ''}`.trimEnd()}
+      className={`button-container ${isOperator(props.children) ? 'operator' : ''}`.trimEnd()}
+      onClick={() => props.useClick(props.children)}
     >
-      {children}
+      {props.children}
     </div>
   )
 }
